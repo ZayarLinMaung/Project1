@@ -7,6 +7,8 @@
         '/addproduct' => 'controllers/addproduct.php',
         '/updateproduct' => 'controllers/updateproduct.php',
         '/about' => 'controllers/about.php',
-        '/contact' => 'controllers/contact.php' 
+        '/contact' => 'controllers/contact.php',
+        '/login' => 'controllers/login.php',
+        '/register' => 'controllers/register.php' 
     ];
 ?>

@@ -52,7 +52,32 @@ class Database {
         $this->stmt->bindParam(':title', $title, PDO::PARAM_STR);
         $this->stmt->bindParam(':desc', $desc, PDO::PARAM_STR); 
         return $this->stmt->execute();
-}
-
+    }
+    public function checkUser($email){
+        $sql = "SELECT * FROM users WHERE email = :email";
+        $this->stmt = $this->conn->prepare($sql);
+        $this->stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $this->stmt->execute();
+        return $this->stmt->rowCount();
+    }
+    public function storeUser($username, $email, $password){
+        $sql = 'INSERT INTO users (email, username, password) VALUES (:email, :username, :password)';
+        $this->stmt = $this->conn->prepare($sql);
+        $this->stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $this->stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $this->stmt->bindParam(':password', $password, PDO::PARAM_STR);
+        if($this->stmt->execute()) {
+            echo "Registration successful!";
+        } else {
+            echo "Error during registration.";
+        }
+    }
+    public function fetchUser($email){
+        $sql = "SELECT * FROM users WHERE email = :email";
+        $this->stmt = $this->conn->prepare($sql);
+        $this->stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $this->stmt->execute();
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
 ?>

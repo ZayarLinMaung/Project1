@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +22,13 @@
             <a href="">
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small_2x/user-profile-icon-free-vector.jpg" alt="" class="w-14 rounded-full">
             </a>
-            <button class="bg-slate-500 hover:bg-slate-700 text-slate-100 py-2 px-4 rounded-full">Log In</button>
+            <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                <!-- Show Log Out button when logged in -->
+                <a href="../../controllers/logout.php" class="bg-slate-500 hover:bg-slate-700 text-slate-100 p-5 rounded-full">Log Out</a>
+            <?php else: ?>
+                <!-- Show Log In button when not logged in -->
+                <a href="/login" class="bg-slate-500 hover:bg-slate-700 text-slate-100 p-5 rounded-full">Log In</a>
+            <?php endif; ?>
         </div>
     </div>
 </body>
