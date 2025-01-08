@@ -11,6 +11,9 @@ class Database {
             die("Connection failed: " . $e->getMessage());
         }
     }
+    public function getConn() {
+        return $this->conn;
+    }
 
     // Fetch all products
     public function fetchAll() {
@@ -38,19 +41,20 @@ class Database {
     }
 
     // Add a new product
-    public function add($title, $desc) {
-        $sql = "INSERT INTO products (title, `desc`) VALUES (:title, :desc)";
-        $this->stmt = $this->conn->prepare($sql);
-        $this->stmt->bindParam(':title', $title, PDO::PARAM_STR);
-        $this->stmt->bindParam(':desc', $desc, PDO::PARAM_STR);
-        return $this->stmt->execute();
-    }
+    
     public function update($id, $title, $desc) {
         $sql = "UPDATE products SET title = :title, `desc` = :desc WHERE id = :id";
         $this->stmt = $this->conn->prepare($sql);
         $this->stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $this->stmt->bindParam(':title', $title, PDO::PARAM_STR);
         $this->stmt->bindParam(':desc', $desc, PDO::PARAM_STR); 
+        return $this->stmt->execute();
+    }
+    public function updateImg($id, $img) {
+        $sql = "UPDATE products SET image_path = :img WHERE id = :id";
+        $this->stmt = $this->conn->prepare($sql);
+        $this->stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $this->stmt->bindParam(':img', $img);
         return $this->stmt->execute();
     }
     public function checkUser($email){

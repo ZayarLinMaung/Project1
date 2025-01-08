@@ -12,6 +12,7 @@
                 <p class="text-4xl"><?=$product['title']?></p>
                 <p class="text-2xl w-40 sm:w-2/3 h-auto"><?=$product['desc']?></p>
         </div>
+        <a href="/updateimg?id=<?= $product['id'] ?>" class="mt-10 text-black bg-white p-5 rounded-lg">Update Image</a>
         <a href="/updateproduct?id=<?= $product['id'] ?>" class="mt-10 text-black bg-white p-5 rounded-lg">Update Product</a>
 
         <form method="POST" >

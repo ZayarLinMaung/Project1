@@ -6,6 +6,7 @@
         '/product' => 'controllers/product.php',
         '/addproduct' => 'controllers/addproduct.php',
         '/updateproduct' => 'controllers/updateproduct.php',
+        '/updateimg' => 'controllers/updateimg.php',
         '/about' => 'controllers/about.php',
         '/contact' => 'controllers/contact.php',
         '/login' => 'controllers/login.php',
