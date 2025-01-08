@@ -10,7 +10,7 @@ session_start();
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="w-full h-auto flex flex-col sm:flex-row bg-slate-900 justify-between items-center fixed p-10 top-0">
+    <div class="w-full h-auto flex flex-col sm:flex-row bg-slate-900 justify-between items-center fixed p-10 top-0 z-1">
         <h1 class="font-bold text-slate-100 text-4xl">Logo</h1>
         <div class="flex flex-col sm:flex-row text-slate-400 items-center justify-center">
             <a href="/" class="<?php echo uri('/')? 'text-slate-900 bg-slate-300 ':'text-slate-400';?> my-3 px-7 py-3 sm:px-4 sm:py-2 rounded-md">Home</a>

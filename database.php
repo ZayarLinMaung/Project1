@@ -3,7 +3,7 @@ class Database {
     private $conn;
     private $stmt;
 
-    public function __construct($user = 'root', $pass = '') {
+    public function __construct($user = 'ZLM', $pass = '3219685740') {
         try {
             $this->conn = new PDO("mysql:host=127.0.0.1;dbname=project1", $user, $pass);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

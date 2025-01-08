@@ -22,7 +22,7 @@
             // Hash the password for security
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             $db->storeUser($username,$email,$hashedPassword);
-            header('Location: /products');
+            header('Location: /login');
             exit;
         }
     
