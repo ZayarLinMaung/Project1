@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php require_once 'components/nav.php'; ?>
-    <div class="w-full min-h-screen bg-slate-700 flex flex-col items-center md:mt-0 pt-32 mt-96">
+    <div class="w-full min-h-screen bg-slate-700 flex flex-col items-center md:mt-0 pt-32 mt-96 sm:mt-36">
         <h1 class="font-bold text-slate-200 text-7xl sm:mt-20">Products</h1>
         <?php if (empty($products)): ?>
             <p class="text-2xl text-red-500 text-center mt-20">No products found.</p>
